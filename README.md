@@ -73,6 +73,8 @@
 
     IMAGE_NAME=your-dockerhub-image-name
     CONTAINER_NAME="gau_to_do_list"
+    ENV_FILE=".env"
+    
     echo "==== Start Update To Do List Service ===="
    
     # Dừng container cũ nếu có
