@@ -9,6 +9,24 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func GetAllTask(c *gin.Context) {
+	taskList, valid := utils.HandleGetListTaskFromContext(c)
+	if !valid {
+		return
+	}
+
+	if len(*taskList) == 0 {
+		c.JSON(http.StatusOK, gin.H{"status": "200", "message": "task list is empty"})
+		return
+	}
+	jsonData, err := json.Marshal(taskList)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"status": 500, "error": "Failed to marshal task list"})
+		return
+	}
+	c.JSON(http.StatusOK, json.RawMessage(jsonData))
+}
+
 func GetTaskByID(c *gin.Context) {
 	taskList, valid := utils.HandleGetListTaskFromContext(c)
 	if !valid {
@@ -30,18 +48,4 @@ func GetTaskByID(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusNotFound, gin.H{"status": 404, "error": "task not found"})
-}
-
-func GetAllTask(c *gin.Context) {
-	taskList, valid := utils.HandleGetListTaskFromContext(c)
-	if !valid {
-		return
-	}
-
-	jsonData, err := json.Marshal(taskList)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"status": 500, "error": "Failed to marshal task list"})
-		return
-	}
-	c.JSON(http.StatusOK, json.RawMessage(jsonData))
 }
