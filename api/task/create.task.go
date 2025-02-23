@@ -29,5 +29,5 @@ func CreateTask(c *gin.Context) {
 
 	*taskList = append(*taskList, task)
 
-	c.JSON(http.StatusCreated, gin.H{"status": "201", "message": "task created!", "task": task})
+	c.JSON(http.StatusCreated, gin.H{"status": "201", "message": "task created!", "taskID": task.ID})
 }

@@ -1,6 +1,7 @@
 package task
 
 import (
+	"encoding/json"
 	"github.com/tnqbao/gau-to-do-list/utils"
 	"net/http"
 	"strconv"
@@ -29,4 +30,18 @@ func GetTaskByID(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusNotFound, gin.H{"status": 404, "error": "task not found"})
+}
+
+func GetAllTask(c *gin.Context) {
+	taskList, valid := utils.HandleGetListTaskFromContext(c)
+	if !valid {
+		return
+	}
+
+	jsonData, err := json.Marshal(taskList)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"status": 500, "error": "Failed to marshal task list"})
+		return
+	}
+	c.JSON(http.StatusOK, json.RawMessage(jsonData))
 }
