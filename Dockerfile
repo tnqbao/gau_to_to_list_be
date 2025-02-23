@@ -5,8 +5,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
 ## build with release tag
-RUN go build -tags release /cmd/ -o main
-
+RUN go build -tags release -o main ./cmd
 # Runtime Stage
 FROM alpine:latest
 WORKDIR /gau_to_do_list
