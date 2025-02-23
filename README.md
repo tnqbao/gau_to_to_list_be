@@ -78,7 +78,7 @@
     echo "==== Start Update To Do List Service ===="
    
     # Dừng container cũ nếu có
-    if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
+    if docker ps -a --format '{{.Names}}' | grep -q "^$CONTAINER_NAME$"; then
     echo "Stopping current container: $CONTAINER_NAME..."
     docker stop $CONTAINER_NAME
     docker rm $CONTAINER_NAME
