@@ -24,14 +24,14 @@ func SetupRouter() *gin.Engine {
 
 	endpoint := r.Group("/")
 	{
-		endpoint.GET("/task/:id", task.GetTaskByID)
+		endpoint.GET("/tasks/:id", task.GetTaskByID)
 		endpoint.GET("/tasks", task.GetAllTask)
 
-		endpoint.POST("/task", task.CreateTask)
+		endpoint.POST("/tasks", task.CreateTask)
 
-		endpoint.PUT("/task/:id", task.UpdateTaskById)
-		
-		endpoint.DELETE("/task/:id", task.DeleteTaskById)
+		endpoint.PUT("/tasks/:id", task.UpdateTaskById)
+
+		endpoint.DELETE("/tasks/:id", task.DeleteTaskById)
 	}
 	return r
 }
