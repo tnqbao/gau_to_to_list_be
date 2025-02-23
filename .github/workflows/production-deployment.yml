@@ -39,4 +39,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sh restart_gau_to_do_list.sh
+            sh deploy_to_do_list.sh
