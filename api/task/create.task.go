@@ -1,6 +1,7 @@
 package task
 
 import (
+	"github.com/tnqbao/gau-to-do-list/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -8,9 +9,9 @@ import (
 )
 
 func CreateTask(c *gin.Context) {
-	listTask, ok := c.MustGet("listTask").([]models.Task)
-	if !ok {
-		c.JSON(http.StatusInternalServerError, gin.H{"status": "500", "error": "Internal Server Error"})
+
+	taskList, valid := utils.HandleGetListTaskFromContext(c)
+	if !valid {
 		return
 	}
 
@@ -20,12 +21,13 @@ func CreateTask(c *gin.Context) {
 		return
 	}
 
-	if len(listTask) > 0 {
-		task.ID = listTask[len(listTask)-1].ID + 1
+	if len(*taskList) > 0 {
+		task.ID = (*taskList)[len(*taskList)-1].ID + 1
 	} else {
 		task.ID = 1
 	}
 
-	listTask = append(listTask, task)
-	c.JSON(http.StatusCreated, gin.H{"status": "201", "message": "Task created!", "task": task})
+	*taskList = append(*taskList, task)
+
+	c.JSON(http.StatusCreated, gin.H{"status": "201", "message": "task created!", "task": task})
 }
