@@ -14,6 +14,11 @@ func UpdateTaskById(c *gin.Context) {
 		return
 	}
 
+	mutex, valid := utils.HandleGetMutexFromContext(c)
+	if !valid {
+		return
+	}
+
 	var task models.Task
 	if err := c.BindJSON(&task); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"status": 400, "error": err.Error()})
@@ -25,6 +30,9 @@ func UpdateTaskById(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"status": 400, "error": "invalid task id"})
 		return
 	}
+
+	mutex.Lock()
+	defer mutex.Unlock()
 
 	for i, t := range *taskList {
 		if t.ID == id {

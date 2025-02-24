@@ -63,7 +63,7 @@
      * `SERVER USER` :  Username deploy trên server
      * `SERVER_IP` : Địa chỉ IP của server
  
- * File yml mặc định : https://github.com/tnqbao/gau-to-do-list/blob/master/.github/workflows/production-deployment.yml
+ * File yml mặc định : https://github.com/tnqbao/gau-to-do-list_be/blob/master/.github/workflows/production-deployment.yml
 
 ### Cấu hình deploy lên server:
  * Tạo file .env như mẫu phía trên
@@ -98,6 +98,8 @@
     ``` bash
     chmod +x deploy_to_do_list.sh
     ```
+   
+
  <i>Vậy là xong rồi,giờ thì khi bạn khi push code lên Github, Github Actions sẽ tự động build image và deploy lên server cloud!! </i>
 
 ***
