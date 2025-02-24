@@ -2,8 +2,8 @@ package task
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tnqbao/gau-to-do-list/models"
-	"github.com/tnqbao/gau-to-do-list/utils"
+	"github.com/tnqbao/gau_to_do_list_be/models"
+	"github.com/tnqbao/gau_to_do_list_be/utils"
 	"net/http"
 	"strconv"
 )

@@ -4,7 +4,7 @@ package main
 
 import (
 	"github.com/joho/godotenv"
-	"github.com/tnqbao/gau-to-do-list/routes"
+	"github.com/tnqbao/gau_to_do_list_be/routes"
 	"log"
 )
 
