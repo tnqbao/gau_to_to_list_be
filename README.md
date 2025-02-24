@@ -63,7 +63,7 @@
      * `SERVER USER` :  Username deploy trên server
      * `SERVER_IP` : Địa chỉ IP của server
  
- * File yml mặc định : https://github.com/tnqbao/gau-to-do-list_be/blob/master/.github/workflows/production-deployment.yml
+ * File yml mặc định : https://github.com/tnqbao/gau_to_to_list_be/blob/master/.github/workflows/production-deployment.yml
 
 ### Cấu hình deploy lên server:
  * Tạo file .env như mẫu phía trên
