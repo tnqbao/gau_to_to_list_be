@@ -5,8 +5,8 @@
 ## Cài đặt mã nguồn
 ### Clone mã nguồn dự án:
    ``` bash
-    git clone https://github.com/tnqbao/gau_to_do_list.git
-    cd gau_to_do_list
+    git clone https://github.com/tnqbao/gau_to_do_list_be.git
+    cd gau_to_do_list_be
    ```
 ### Chỉnh sửa lại module trong go.mod:
   ``` bash

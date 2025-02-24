@@ -2,9 +2,9 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tnqbao/gau-to-do-list/api/task"
-	"github.com/tnqbao/gau-to-do-list/middlewares"
-	"github.com/tnqbao/gau-to-do-list/models"
+	"github.com/tnqbao/gau_to_do_list_be/api/task"
+	"github.com/tnqbao/gau_to_do_list_be/middlewares"
+	"github.com/tnqbao/gau_to_do_list_be/models"
 	"sync"
 )
 

@@ -3,7 +3,7 @@ package utils
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/tnqbao/gau-to-do-list/models"
+	"github.com/tnqbao/gau_to_do_list_be/models"
 	"net/http"
 )
 

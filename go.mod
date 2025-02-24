@@ -1,4 +1,4 @@
-module github.com/tnqbao/gau-to-do-list
+module github.com/tnqbao/gau_to_do_list_be
 
 go 1.23.4
 
