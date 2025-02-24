@@ -24,14 +24,14 @@
 ```
 
 ### Chạy ở chế độ dev mode:
-    ``` bash 
-    go run -tags dev /cmd/
-    ```
+   ``` bash 
+    go run -tags dev ./cmd/
+   ```
   
 ### Chạy ở chế độ build production:
-    ``` bash
-    go build -tags release /cmd/
-    ```
+   ``` bash
+    go build -tags release ./cmd/
+   ```
   <li>Truy cập api tại: <a href="http://localhost:8088" target="_blank">http://localhost:8088</a></li>
 
 ***
